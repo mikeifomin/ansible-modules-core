@@ -179,7 +179,7 @@ HAS_DOPY = True
 try:
     import dopy
     from dopy.manager import DoError, DoManager
-    if LooseVersion(dopy.__version__) < LooseVersion('0.3.2'):
+    if LooseVersion(dopy.__version__) < LooseVersion('0.3.7'):
         HAS_DOPY = False
 except ImportError:
     HAS_DOPY = False
@@ -429,7 +429,7 @@ def main():
         ),
     )
     if not HAS_DOPY:
-        module.fail_json(msg='dopy >= 0.3.2 required for this module')
+        module.fail_json(msg='dopy >= 0.3.7 required for this module')
 
     try:
         core(module)
